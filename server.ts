@@ -30,7 +30,7 @@ Print sections clearly:
 
 async function startServer() {
   const app = express();
-  const PORT = process.env.PORT || 3000;
+  const PORT = Number(process.env.PORT) || 3000;
 
   app.use(express.json());
 
@@ -44,8 +44,7 @@ async function startServer() {
         return res.status(500).json({ error: "GEMINI_API_KEY no configurada en el servidor." });
       }
 
-      const ai = new GoogleGenAI(apiKey);
-      const model = ai.getGenerativeModel({ model: "gemini-1.5-flash" });
+      const ai = new GoogleGenAI({ apiKey });
 
       const promptText = `User Inputs:
 - Global Style: ${inputs.globalStyle}
@@ -57,12 +56,19 @@ ${inputs.lyrics}
 
 Expand these into a long, technical Suno prompt (~5000 chars).`;
 
-      const result = await model.generateContentStream([SYSTEM_PROMPT, promptText]);
+      const result = await ai.models.generateContentStream({
+        model: "gemini-3-flash-preview",
+        config: {
+          systemInstruction: SYSTEM_PROMPT,
+        },
+        contents: [{ role: "user", parts: [{ text: promptText }] }]
+      });
       
       res.setHeader('Content-Type', 'text/plain');
-      for await (const chunk of result.stream) {
-        const chunkText = chunk.text();
-        res.write(chunkText);
+      for await (const chunk of result) {
+        if (chunk.text) {
+          res.write(chunk.text);
+        }
       }
       res.end();
 
