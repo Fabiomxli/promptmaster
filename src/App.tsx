@@ -158,10 +158,10 @@ export default function App() {
           </div>
           <div>
             <h1 className="text-2xl font-black tracking-tighter text-white uppercase italic">
-              Suno <span className="text-studio-accent">v5.5</span> Master
+              Suno <span className="text-studio-accent">Prompt</span> Master
             </h1>
-            <p className="text-studio-text-dim text-xs font-bold uppercase tracking-widest">
-              Prompt Inflation Console
+            <p className="text-studio-text-dim text-xs font-bold uppercase tracking-widest leading-none">
+              by <span className="text-studio-accent">DJ H Salcido</span>
             </p>
           </div>
         </div>
@@ -488,7 +488,7 @@ export default function App() {
 
       {/* Footer / Status Bar */}
       <footer className="max-w-7xl mx-auto border-t border-studio-border pt-6 text-[10px] text-studio-text-dim flex justify-between">
-        <div>&copy; 2026 SUNO MASTER OPTIMIZER • ADVANCED PROMPT ENGINE</div>
+        <div>&copy; 2026 SUNO PROMPT MASTER BY DJ H SALCIDO • ADVANCED PROMPT ENGINE</div>
         <div className="flex gap-4">
           <span className="flex items-center gap-1"><span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" /> GENERATIVE ENGINE READY</span>
           <span>LATENCY: 12ms</span>
