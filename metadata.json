@@ -1,0 +1,6 @@
+{
+  "name": "Suno v5.5 Master Optimizer",
+  "description": "Professional prompt engineering tool for Suno v5.5 with a full-stack Node.js server. Generates high-fidelity scripts using audio engineering logic. Configurable for custom installations on port 3152.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

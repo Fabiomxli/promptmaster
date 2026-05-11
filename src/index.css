@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@theme {
+  --color-studio-bg: #0a0a0c;
+  --color-studio-panel: #121216;
+  --color-studio-border: #222228;
+  --color-studio-accent: #facc15;
+  --color-studio-accent-hover: #eab308;
+  --color-studio-text-dim: #94a3b8;
+}
+
+body {
+  background-color: var(--color-studio-bg);
+  color: #f1f5f9;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.studio-input {
+  background-color: #1a1a1e;
+  border: 1px solid var(--color-studio-border);
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  color: #f1f5f9;
+  transition: all 0.2s;
+  outline: none;
+}
+
+.studio-input:focus {
+  border-color: var(--color-studio-accent);
+  box-shadow: 0 0 0 2px rgba(250, 204, 21, 0.1);
+}
+
+.studio-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-studio-text-dim);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.studio-button {
+  background-color: var(--color-studio-accent);
+  color: #000;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.studio-button:hover {
+  background-color: var(--color-studio-accent-hover);
+  transform: translateY(-1px);
+}
+
+.studio-button:active {
+  transform: translateY(0);
+}
+
+.studio-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
